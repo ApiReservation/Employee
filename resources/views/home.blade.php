@@ -14,6 +14,7 @@
       <!-- One -->
       <section id="one" class="wrapper style1">
          <div class="inner">
+            @if(isset($users))
             <?php $i=1; ?>
             @foreach($users as  $users)
             <article class= "{{ $i%2 == 0 ? 'feature right' : 'feature left' }} ">
@@ -30,6 +31,14 @@
             </article>
             <?php $i++;?>
             @endforeach
+           
+
+              @else
+              <article >
+                  <p class="center">No records were found!</p>
+         
+            </article>
+            @endif
          </div>
       </section>
       <!-- Footer -->
